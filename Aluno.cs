@@ -11,6 +11,8 @@ namespace caAluno
         private String nome;
         private String numero_matricula;
         private int periodo;
+        Materia[] lista_materias = new Materia[8];
+        private int posicao = 0;
 
         //Construtor
         public Aluno()
@@ -39,6 +41,11 @@ namespace caAluno
             this.periodo = periodo;
             return this.periodo;
         }
+        public void setListaMateria(Materia mat)
+        {
+            this.lista_materias[this.posicao] = mat;
+            posicao++;
+        }
         // Getters
         public String getNome()
         {
@@ -52,12 +59,22 @@ namespace caAluno
         {
             return this.periodo;
         }
+        public Materia getListaMaterias(int pos)
+        {
+            return this.lista_materias[pos];
+        }
         // Metodos
         public void imprimirDados()
         {
             Console.WriteLine("Nome: " + this.getNome());
             Console.WriteLine("Numero de Matricula: " + this.getNumeroMatricula());
-            Console.WriteLine("Periodo: " + this.getPeriodo());
+            Console.WriteLine("Periodo: " + this.getPeriodo()+"\n");
+
+            for(int i = 0; i < posicao; i++)
+            {
+                Console.WriteLine("Materia: " + this.getListaMaterias(i).getNome());
+                Console.WriteLine("Codigo: " + this.getListaMaterias(i).getCodigo() + "\n");
+            }
         }
 
     }
