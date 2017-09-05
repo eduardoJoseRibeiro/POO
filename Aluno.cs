@@ -12,9 +12,10 @@ namespace caAluno
         private String numero_matricula;
         private int periodo;
 
+        //Construtor
         public Aluno()
         {
-
+            // Construtor Default
         }
         public Aluno(String nome, String numero_matricula,int periodo)
         {
